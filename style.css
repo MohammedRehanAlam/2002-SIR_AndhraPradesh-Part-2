@@ -931,22 +931,27 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 8px;
+  width: 100%;
 }
 .db-parts-switcher-compact {
   display: flex;
   align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 12px;
   background: var(--surface);
   border: 1px solid var(--border);
   padding: 8px 16px;
   border-radius: var(--radius-sm);
   width: fit-content;
+  max-width: 100%;
   backdrop-filter: blur(8px);
 }
 .switcher-label-wrap {
   display: flex;
   align-items: center;
   gap: 6px;
+  flex-shrink: 0;
 }
 .switcher-label {
   font-size: 11px;
@@ -991,7 +996,9 @@ body {
 }
 .switcher-buttons {
   display: flex;
+  flex-wrap: wrap;
   gap: 6px;
+  justify-content: center;
 }
 .switcher-btn {
   font-size: 12px;
@@ -1016,5 +1023,20 @@ body {
   box-shadow: 0 2px 10px rgba(79, 70, 229, 0.25);
 }
 
-
-
+@media (max-width: 600px) {
+  .db-parts-switcher-compact {
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px 14px;
+    width: 100%;
+  }
+  .switcher-buttons {
+    width: 100%;
+  }
+  .switcher-btn {
+    flex: 1 1 auto;
+    text-align: center;
+    padding: 6px 10px;
+    font-size: 11px;
+  }
+}
